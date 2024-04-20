@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { manufacturers } from "@/constants";
+import { fetchCars } from "@/utils";
 
 interface Props {
   manufacturer: string;
