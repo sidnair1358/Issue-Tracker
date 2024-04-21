@@ -4,12 +4,15 @@ import Image from "next/image";
 import { manufacturers } from "@/constants";
 import { fetchCars } from "@/utils";
 
-interface Props {
+interface SearchManufacturerProps {
   manufacturer: string;
   setManufacturer: (manufacturer: string) => void;
 }
 
-const SearchManufacturer = ({ manufacturer, setManufacturer }: Props) => {
+const SearchManufacturer = ({
+  manufacturer,
+  setManufacturer,
+}: SearchManufacturerProps) => {
   const [query, setQuery] = useState("");
 
   const filteredManufacturers =

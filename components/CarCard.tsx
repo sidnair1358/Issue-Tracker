@@ -3,8 +3,9 @@ import { useState } from "react";
 import Image from "next/image";
 import CustomButton from "./CustomButton";
 import { calculateCarRent } from "@/utils";
+import CarDetails from "./CarDetails";
 
-interface CarProps {
+export interface CarProps {
   car: {
     city_mpg: number;
     class: string;
@@ -80,6 +81,11 @@ const CarCard = ({ car }: CarProps) => {
           />
         </div>
       </div>
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 };

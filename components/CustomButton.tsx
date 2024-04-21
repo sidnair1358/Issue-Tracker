@@ -2,7 +2,7 @@
 import React, { MouseEventHandler } from "react";
 import Image from "next/image";
 
-interface Props {
+interface CustomButtonProps {
   title: string;
   btnType?: "button" | "submit";
   containerStyles?: string;
@@ -12,13 +12,13 @@ interface Props {
   isDisabled?: boolean;
 }
 
-const CustomButton = (props: Props) => {
+const CustomButton = (props: CustomButtonProps) => {
   return (
     <button
       disabled={false}
       type={props.btnType || "button"}
       className={`custom-btn ${props.containerStyles} ${props.textStyles}`}
-      onClick={() => {}}
+      onClick={props.handleClick}
     >
       <span className="flex-1">{props.title}</span>
       {props.rightIcon && (
